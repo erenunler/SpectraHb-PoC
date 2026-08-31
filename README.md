@@ -26,34 +26,34 @@ Pasif strateji kapsamında cihazın dış gövdesi kapalı kasa olarak tasarlanm
 
 Aktif strateji ise elektronik ve yazılım seviyesinde çalışır. Çoğullama işlemi sırasında LED kaynakları sırayla yakılırken aralarda tüm ışıkların kapalı tutulduğu karanlık pencereler bırakılır. Bu pencerelerde ölçülen salt ortam ışığı değeri aktif aydınlatma anında okunan değerlerden çıkarılarak kusursuz karanlık çerçeve kompanzasyonu sağlanır.
 
-graph TD  
-    subgraph Optik\_Kaynaklar  
-        L1\[660 nm \- Cilt Tonu Referans Kanalı\]  
-        L2\[850 nm \- Ana Sinyal Kanalı\]  
-        L3\[940 nm \- Cilt Tonuna Dirençli Kanal\]  
+graph TD
+    subgraph Faz_1A_Metodoloji_Testleri
+        M1[Egitim Seti Bolme Stratejileri]
+        M2[Grup Bazli ve Rastgele Bolme Karsilastirmasi]
+        M3[Capraz Veri Seti Dayaniklilik Testi]
     end
 
-    subgraph Fiziksel\_Tasarim\_ve\_İzolasyon  
-        FO\[Fiber Optik Kılavuz ile Tek Noktadan İletim\]  
-        PK\[Pasif Kalkan \- Mat Kaplama ve Işık Contası\]  
-        BS\[Basınç Sensörü \- Temas Kalitesi Ölçümü\]  
-        PD\[BPW34 Fotodiyot Sinyal Algılama\]  
+    subgraph Faz_1B_Cilt_Tonu_Analizi
+        C1[Oksimetre Veri Tabani Kullanim Izinleri]
+        C2[Farkli Pigmentasyon Verilerinin Incelenmesi]
+        C3[Melanin Yanilgisi Sinirlarinin Cizilmesi]
     end
 
-    subgraph Aktif\_Kompanzasyon\_ve\_Sayisallastirma  
-        MUX\[Zaman Paylaşımlı Çoğullama ve LED Sürüşü\]  
-        DK\[Karanlık Pencere \- Ortam Işığı Ölçümü\]  
-        FARK\[Saf Sinyal \- Çıkarma İşlemi\]  
-        ADC\[ESP32 Yüksek Hızlı Sayısallaştırma\]  
+    subgraph Faz_1C_Siniflandirma_Modeli
+        S1[Dunya Saglik Orgutu Sinir Degerlerinin Belirlenmesi]
+        S2[Saglikli - Sinirda - Anemik Siniflandirmasi]
+        S3[Cilt Tonu Ozelliklerinin Modele Yedirilmesi]
     end
 
-    Optik\_Kaynaklar \--\> FO  
-    FO \--\> PK  
-    PK \--\> PD  
-    BS \-. Basınç Verisi .-\> ADC  
-    PD \--\> MUX  
-    MUX \--\> DK  
-    DK \--\> FARK  
-    FARK \--\> ADC  
-    ADC \--\> SONUC\[Çoklu Dalga Boyu Net Sinyal Paketi\]  
+    subgraph Alternatif_Goruntu_Isleme_Hatti
+        G1[Konjonktiva Goruntu On Isleme Adimlari]
+        G2[Renk Uzayi Donusumu ve Isik Dengeleme]
+        G3[Goruntu Tabanli Ozellik Cikarimi]
+    end
 
+    Faz_1A_Metodoloji_Testleri --> Faz_1C_Siniflandirma_Modeli
+    Faz_1B_Cilt_Tonu_Analizi --> Faz_1C_Siniflandirma_Modeli
+    Faz_1C_Siniflandirma_Modeli --> HEDEF[Karar Destek Modeli ve Klinik Cikti]
+    Alternatif_Goruntu_Isleme_Hatti -. Ek Dogrulama .-> HEDEF
+
+```eof
