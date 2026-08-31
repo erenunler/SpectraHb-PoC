@@ -26,7 +26,8 @@ Pasif strateji kapsamında cihazın dış gövdesi kapalı kasa olarak tasarlanm
 
 Aktif strateji ise elektronik ve yazılım seviyesinde çalışır. Çoğullama işlemi sırasında LED kaynakları sırayla yakılırken aralarda tüm ışıkların kapalı tutulduğu karanlık pencereler bırakılır. Bu pencerelerde ölçülen salt ortam ışığı değeri aktif aydınlatma anında okunan değerlerden çıkarılarak kusursuz karanlık çerçeve kompanzasyonu sağlanır.
 
-```graph TD
+```mermaid
+graph TD
     subgraph Faz_1A_Metodoloji_Testleri
         M1[Egitim Seti Bolme Stratejileri]
         M2[Grup Bazli ve Rastgele Bolme Karsilastirmasi]
@@ -56,4 +57,4 @@ Aktif strateji ise elektronik ve yazılım seviyesinde çalışır. Çoğullama 
     Faz_1C_Siniflandirma_Modeli --> HEDEF[Karar Destek Modeli ve Klinik Cikti]
     Alternatif_Goruntu_Isleme_Hatti -. Ek Dogrulama .-> HEDEF
 
-```eof
+```
